@@ -1,6 +1,6 @@
-spring:
-  application:
-    name: blah
-  cloud:
-    config:
-      uri: http://localhost:8888
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
