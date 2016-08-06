@@ -5,4 +5,4 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 	  
-test:
+test: blah
