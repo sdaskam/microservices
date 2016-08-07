@@ -7,5 +7,5 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
-my.val=${random.value}
-my.number=${random.int}
+my.val: ${random.value}
+my.number: ${random.int}
