@@ -1,4 +1,4 @@
 server:
   port: 8082
   
-greeting: Hey You!!
+greeting: What's Up?
