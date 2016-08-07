@@ -1,14 +1,8 @@
 eureka:
   instance:
     hostname: localhost
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 1
 	metadataMap:
       nstanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    # Default values comes from org.springframework.cloud.netflix.eurek.EurekaClientConfigBean
-    registryFetchIntervalSeconds: 1
-    instanceInfoReplicationIntervalSeconds: 1
-    initialInstanceInfoReplicationIntervalSeconds: 1
