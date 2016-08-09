@@ -17,7 +17,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @RefreshScope
 public class HelloController {
 	@Value("${greeting}")
-	String greeting = "Hello World!!";
+	String greeting = "Greetings!!";
 	
 	@RequestMapping(method=RequestMethod.GET, path="/hello")
 	public String displayGreeting() {
