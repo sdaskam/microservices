@@ -70,7 +70,7 @@ public class CompositeService {
     public ResponseEntity<List<Review>> getReviews(int productId) {
         LOG.debug("Calling getReviews with Hystrix protection");
 
-        String url = "http://review-service/review?productId=" + productId;
+        String url = "http://review-service/reviews?productId=" + productId;
 
         ResponseEntity<List<Review>> responseEntity =
                 restTemplate.exchange(url, HttpMethod.GET, null,

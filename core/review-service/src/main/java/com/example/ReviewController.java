@@ -1,15 +1,17 @@
 package com.example;
 
+import com.example.domain.Review;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
@@ -18,8 +20,11 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 public class ReviewController {
 	
 	@RequestMapping(method=RequestMethod.GET, path="")
-	public String getAllReviews() {
-		return "{review: 5 Stars}";
+	public ResponseEntity<List<Review>> getAllReviews(@RequestParam int productId) {
+		List<Review> reviews = new ArrayList<Review>();
+		reviews.add(new Review(productId, 1, "Steve", "Feedback", "Greatest Product ever!!"));
+
+		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
 	
 }
